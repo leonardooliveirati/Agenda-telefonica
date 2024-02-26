@@ -1,0 +1,19 @@
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
+  <div>
+    <label for="firstName">Nome:</label>
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+  </div>
+  <div>
+    <label for="lastName">Sobrenome:</label>
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+  </div>
+  <div>
+    <label for="phoneNumber">Telefone:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required>
+  </div>
+  <button type="submit">Enviar</button>
+</form>
+
+<ul>
+  <li *ngFor="let contact of contacts">{{ contact.lastName }}, {{ contact.firstName }} - {{ contact.phoneNumber }}</li>
+</ul>
